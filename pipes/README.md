@@ -16,7 +16,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] Pipe 18nPluralPipe
 - [x] Pipe Number
 - [x] Pipe slice
-- [x] Meu propio pipe
+- [x] Meu próprio pipe
 
 # PRINTS 
 
