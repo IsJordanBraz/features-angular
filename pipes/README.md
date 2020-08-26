@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Projeto com a utilização dos seguintes pipes.
 
 - [x] Pipe UpperCase e Lowercase
+##### Pipe UpperCase e Lowercase
 - [x] Pipe Currency
 - [x] Pipe Date
 - [x] Pipe Titlecase
