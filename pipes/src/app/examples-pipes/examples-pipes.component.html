@@ -1,0 +1,141 @@
+<div class="container">
+
+  <div class="item">
+    <h3>Pipe UpperCase e Lowercase</h3>
+    <p><b>String:</b> {{ book.title }}</p>
+
+    <p>Uppercase: {{ book.title | uppercase }}</p>
+    <p>Lowercase: {{ book.title | lowercase }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe Currency</h3>
+    <p><b>currency</b></p>
+    <p>Price: {{ book.price | currency }}</p>
+    <p><b>currency:'BRL'</b></p>
+    <p>Price: {{ book.price | currency:'BRL' }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe Date</h3>
+    <p>Utilizando formato de data local, importado no app module</p>
+    <p>Date: {{ book.releaseDate | date }}</p>
+    <p>Date: {{ book.releaseDate | date:'dd-MM-yyyy' }}</p>
+    <p>Date: {{ book.releaseDate | date:'dd-yyyy-MM' }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe Titlecase</h3>
+    <p>Titulo: {{ book.title | titlecase}}</p>
+  </div>
+
+  <div class="item">
+    <h3>Meu proprio Pipe - Camel Case</h3>
+    <p>Titulo: {{ book.title | camelCase }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe Json</h3>
+    <p> {{ valueAsync | json }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Async sem Pipe</h3>
+    <p> {{ valueAsync }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe async utilizando Promisse</h3>
+    <p> {{ valueAsync | async}}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe async utilizando interval do rxjs</h3>
+    <p> {{ valueAsync2 | async}}</p>
+  </div>
+
+  <div class="item">
+    <h3>Criar novo curso</h3>
+    <input class="form-control" placeholder="Novo Curso" #courseInput>
+    <button (click)="addCourse(courseInput.value)" class="btn btn-primary">
+      Adicionar Curso
+    </button>
+  </div>
+
+  <div class="item">
+    <h3>Filtro de Array</h3>
+    <input type="text" [(ngModel)]="filter">
+  </div>
+
+  <div class="item">
+    <h3>Lista Array de Cursos</h3>
+    <ul>
+      <li *ngFor="let item of getCourses()">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>Pipe KeyValue</h3>
+    <ul>
+      <li *ngFor="let item of myObject | keyvalue">
+        {{item.key}}:{{item.value}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <h3>Pipe percent</h3>
+    <p><b>Sem pipe</b></p>
+    <p> {{ book.discount }}</p>
+    <p><b>Com pipe</b></p>
+    <p> {{ book.discount | percent }}</p>
+    <p><b>Com pipe: '4.2-5'</b></p>
+    <p> {{ book.discount | percent:'4.2-5' }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe 18nSelectPipe</h3>
+    <p>male | female | others</p>
+    <input class="form-control" placeholder="Gender" [(ngModel)]="gender">
+    <p> gender: {{ gender }}</p>
+    <p>{{ gender | i18nSelect: inviteMap}} </p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe 18nPluralPipe</h3>
+    <p>Sem pipe</p>
+    <p>{{ messages.length }}</p>
+    <p>com pipe</p>
+    <p>{{ messages.length | i18nPlural: messageMapping }}</p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe Number</h3>
+    <p><b>Rating:</b> {{ book.rating }}</p>
+
+    <p>Limitando pela casa decimal: <b>1.1-1</b></p>
+    <p>Rating <b>{{ book.rating | number:'1.1-1' }} </b></p>
+
+    <p>Limitando pela casa decimal: <b>1.1-2</b></p>
+    <p>Rating <b>{{ book.rating | number:'1.1-2' }} </b></p>
+
+    <p>Limitando pela casa decimal: <b>2.1-2</b></p>
+    <p>Rating <b>{{ book.rating | number:'2.1-2' }} </b></p>
+
+    <p>Limitando pela casa decimal: <b>2.1-4</b></p>
+    <p>Rating <b>{{ book.rating | number:'2.1-4' }} </b></p>
+  </div>
+
+  <div class="item">
+    <h3>Pipe slice</h3>
+    <p>{{ str }} [0:5]: '{{ str | slice:0:5 }}'</p>
+    <p>{{ str }} [4:0]: '{{ str | slice:4:0 }}'</p>
+    <p>{{ str }} [-4]: '{{ str | slice:-4 }}'</p>
+    <p>{{ str }} [-4:-2]: '{{ str | slice:-4:-2 }}'</p>
+    <p>{{ str }} [-100]: '{{ str | slice:-100 }}'</p>
+    <p>{{ str }} [100]: '{{ str | slice:100 }}'</p>
+  </div>
+
+</div>
