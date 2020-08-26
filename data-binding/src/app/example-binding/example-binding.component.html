@@ -1,0 +1,104 @@
+<div class="container">
+
+  <article id="interpolation">
+    <h3 class="title">Interpolation /  Interpolação</h3>
+    <p>Uma string renderizada com interpolação: {{ url }}</p>
+    <p>Soma de 1 + 1 é: {{ 1 + 1 }} </p>
+    <p>Soma de 1 + 1 + getValor é: {{ 1 + 1 + getValor() }}</p>
+    <p>Metodo true && true é: {{ aprendendoAngular || getBoolean() }}</p>
+    <p>Imagem de um gato com interpolação </p>
+    <img src="{{ urlImage }}" alt="Imagem de gato">
+  </article>
+
+  <article id="property">
+    <h3 class="title">Property Binding</h3>
+    <p>Imagem de um gato com bind </p>
+    <img [src]="urlImage" alt="Imagem de gato">
+    <p>Imagem de um gato com bind-src </p>
+    <img bind-src="urlImage" alt="Imagem de gato">
+  </article>
+
+  <article id="class-style">
+      <h3 class="title">Class e Style</h3>
+      <div>
+          Selecione uma classe.
+          <select #classe (change)="0" name="" id="">
+              <option value="alert-success">Sucesso</option>
+              <option value="alert-info">Info</option>
+              <option value="alert-warning">Warning</option>
+              <option value="alert-danger">Danger</option>
+          </select>
+
+          <div class="alert {{ classe.value }}" role="alert">
+              Texto colorido conforme select
+          </div>
+          <div class="alert" role="alert"
+              [class.alert-success]="classe.value == 'alert-success'">
+              Sucesso
+          </div>
+          <div class="alert" role="alert"
+              [class.alert-info]="classe.value == 'alert-info'">
+              Info
+          </div>
+          <div class="alert" role="alert"
+              [class.alert-warning]="classe.value == 'alert-warning'">
+              Warning
+          </div>
+          <div class="alert" role="alert"
+              [class.alert-danger]="classe.value == 'alert-danger'">
+              Danger
+          </div>
+
+          <div class="alert alert-danger" role="alert"
+              [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'"
+              >
+              Esse texto somente aperece em caso de erro.
+          </div>
+      </div>
+  </article>
+
+  <article id="event">
+      <h3 class="title">Event Binding</h3>
+      <button (click)="pressedButton()" class="btn btn-primary">Me click</button>
+      <br>
+      <input  type="text" name="" id=""
+          (keyup)="inputChange($event)"
+          (keyup.enter)="salvarValor($event.target.value)"
+          (blur)="salvarValor(campoInput.value)"
+          #campoInput>
+
+      <p>Meu valor {{ valorAtual }}</p>
+      <p>Meu salvo {{ valorSalvo }}</p>
+      <br>
+      <span
+          (mouseover)="onMouseOverOut()"
+          (mouseout)="onMouseOverOut()"
+          [class.mouseOver]="isMouseOver">
+          Passe o mouse sobre mim
+      </span>
+  </article>
+
+  <article id="two-way">
+      <h3>Two-way Data Binding</h3>
+      <div>
+          <input type="text"
+              [value]="nomeVariable"
+              (input)="nomeVariable = $event.target.value">
+          <p>Você digitou {{ nomeVariable }}</p>
+
+          <input type="text" [(ngModel)]="person.name">
+          <input type="text" [(ngModel)]="person.age">
+
+          <p>Meu nome é {{ person.name }} e tenho {{ person.age }} anos.</p>
+
+      </div>
+  </article>
+
+  <!-- <article id="input-output">
+      <h3>Input Output properties</h3>
+      <app-input-property [name]="courseName"></app-input-property>
+
+      <contador [valor]="courseCount"
+          (mudouValor)="onMudouValor($event)"></contador>
+  </article> -->
+</div>

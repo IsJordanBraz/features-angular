@@ -21,3 +21,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # PRINTS 
 
 ![Tela inicial projeto pipe](../images/01.png)
+![Tela inicial projeto pipe](../images/02.png)

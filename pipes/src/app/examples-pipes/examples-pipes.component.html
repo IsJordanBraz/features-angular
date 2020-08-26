@@ -1,57 +1,99 @@
-<div class="container">
+<div class="meuContainer">
 
   <div class="item">
     <h3>Pipe UpperCase e Lowercase</h3>
-    <p><b>String:</b> {{ book.title }}</p>
-
-    <p>Uppercase: {{ book.title | uppercase }}</p>
-    <p>Lowercase: {{ book.title | lowercase }}</p>
+    <p class="item-example">String: {{ book.title }}</p>
+    <p>
+      <span class="item-pipe">Uppercase:</span>
+      <span class="item-value"> {{ book.title | uppercase }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Lowercase:</span>
+      <span class="item-value"> {{ book.title | lowercase }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe Currency</h3>
-    <p><b>currency</b></p>
-    <p>Price: {{ book.price | currency }}</p>
-    <p><b>currency:'BRL'</b></p>
-    <p>Price: {{ book.price | currency:'BRL' }}</p>
+    <p class="item-example">String: {{ book.price }}</p>
+    <p>
+      <span class="item-pipe">currency: </span>
+      <span class="item-value">{{ book.price | currency }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">currency:'BRL' </span>
+      <span class="item-value">{{ book.price | currency:'BRL' }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe Date</h3>
-    <p>Utilizando formato de data local, importado no app module</p>
-    <p>Date: {{ book.releaseDate | date }}</p>
-    <p>Date: {{ book.releaseDate | date:'dd-MM-yyyy' }}</p>
-    <p>Date: {{ book.releaseDate | date:'dd-yyyy-MM' }}</p>
+    <p class="item-example">Utilizando formato de data local, importado no app module</p>
+    <p class="item-example">String: {{ book.releaseDate }}</p>
+    <p>
+      <span class="item-pipe">Date: </span>
+      <span class="item-value">{{ book.releaseDate | date }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Date dd-MM-yyyy: </span>
+      <span class="item-value">{{ book.releaseDate | date:'dd-MM-yyyy' }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Date dd-yyyy-MM: </span>
+      <span class="item-value">{{ book.releaseDate | date:'dd-yyyy-MM' }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe Titlecase</h3>
-    <p>Titulo: {{ book.title | titlecase}}</p>
+    <p class="item-example">Transforma em Camel Case</p>
+    <p class="item-example">String: {{ book.title }}</p>
+    <p>
+      <span class="item-pipe">Titlecase: </span>
+      <span class="item-value">{{ book.title | titlecase}}</span>
+    </p>
   </div>
 
   <div class="item">
-    <h3>Meu proprio Pipe - Camel Case</h3>
-    <p>Titulo: {{ book.title | camelCase }}</p>
+    <h3>Meu pipe Camel Case</h3>
+    <p class="item-example">Transforma em Camel Case</p>
+    <p>
+      <span class="item-pipe">Meu pipe: </span>
+      <span class="item-value">{{ book.title | camelCase }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe Json</h3>
-    <p> {{ valueAsync | json }}</p>
+    <span class="item-value">{{ valueAsync }}</span>
   </div>
 
   <div class="item">
-    <h3>Async sem Pipe</h3>
-    <p> {{ valueAsync }}</p>
+    <h3>Promisse sem Pipe</h3>
+    <p> <span class="item-value">{{ valueAsync }}</span></p>
   </div>
 
   <div class="item">
-    <h3>Pipe async utilizando Promisse</h3>
-    <p> {{ valueAsync | async}}</p>
+    <h3>Promisse com pipe Async</h3>
+    <p>
+      <span class="item-pipe">Async: </span>
+      <span class="item-value">{{ valueAsync | async}}</span>
+    </p>
   </div>
 
   <div class="item">
-    <h3>Pipe async utilizando interval do rxjs</h3>
-    <p> {{ valueAsync2 | async}}</p>
+    <h3>Interval do rxjs sem pipe</h3>
+    <p>
+      <span class="item-value">{{ valueAsync2 }}</span>
+    </p>
+  </div>
+
+  <div class="item">
+    <h3>Interval do rxjs com pipe Async</h3>
+    <p>
+      <span class="item-pipe">Async: </span>
+      <span class="item-value">{{ valueAsync2 | async}}</span>
+    </p>
   </div>
 
   <div class="item">
@@ -64,11 +106,12 @@
 
   <div class="item">
     <h3>Filtro de Array</h3>
-    <input type="text" [(ngModel)]="filter">
+    <p class="item-example">Procura se a string digitada está inclusa na lista Array</p>
+    <input class="form-control" placeholder="Filtrar valores na lista" [(ngModel)]="filter">
   </div>
 
   <div class="item">
-    <h3>Lista Array de Cursos</h3>
+    <h3>Lista Array</h3>
     <ul>
       <li *ngFor="let item of getCourses()">
         {{ item }}
@@ -87,55 +130,100 @@
 
   <div class="item">
     <h3>Pipe percent</h3>
-    <p><b>Sem pipe</b></p>
-    <p> {{ book.discount }}</p>
-    <p><b>Com pipe</b></p>
-    <p> {{ book.discount | percent }}</p>
-    <p><b>Com pipe: '4.2-5'</b></p>
-    <p> {{ book.discount | percent:'4.2-5' }}</p>
+    <p>
+      <span class="item-pipe">Sem pipe: </span>
+      <span class="item-value">{{ book.discount }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Com pipe: </span>
+      <span class="item-value">{{ book.discount | percent }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Com pipe: '4.2-5': </span>
+      <span class="item-value">{{ book.discount | percent:'4.2-5' }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe 18nSelectPipe</h3>
-    <p>male | female | others</p>
+    <p class="item-example">male | female | others</p>
     <input class="form-control" placeholder="Gender" [(ngModel)]="gender">
-    <p> gender: {{ gender }}</p>
-    <p>{{ gender | i18nSelect: inviteMap}} </p>
+    <p>
+      <span class="item-pipe">gender: {{ gender }} = </span>
+      <span class="item-value">{{ gender | i18nSelect: inviteMap}}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe 18nPluralPipe</h3>
-    <p>Sem pipe</p>
-    <p>{{ messages.length }}</p>
-    <p>com pipe</p>
-    <p>{{ messages.length | i18nPlural: messageMapping }}</p>
+    <p class="item-example">messages: any[] = ['Primeira mensagem', 'Segunda', 'Terceira']</p>
+    <p>
+      <span class="item-pipe">Messages Length sem pipe = </span>
+      <span class="item-value">{{ messages.length }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Messages Length [0] com pipe = </span>
+      <span class="item-value">{{ 0 | i18nPlural: messageMapping }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Messages Length [1] com pipe = </span>
+      <span class="item-value">{{ 1 | i18nPlural: messageMapping }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">Messages Length [3] com pipe = </span>
+      <span class="item-value">{{ messages.length | i18nPlural: messageMapping }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe Number</h3>
-    <p><b>Rating:</b> {{ book.rating }}</p>
-
-    <p>Limitando pela casa decimal: <b>1.1-1</b></p>
-    <p>Rating <b>{{ book.rating | number:'1.1-1' }} </b></p>
-
-    <p>Limitando pela casa decimal: <b>1.1-2</b></p>
-    <p>Rating <b>{{ book.rating | number:'1.1-2' }} </b></p>
-
-    <p>Limitando pela casa decimal: <b>2.1-2</b></p>
-    <p>Rating <b>{{ book.rating | number:'2.1-2' }} </b></p>
-
-    <p>Limitando pela casa decimal: <b>2.1-4</b></p>
-    <p>Rating <b>{{ book.rating | number:'2.1-4' }} </b></p>
+    <p class="item-example">String: {{ book.rating }}</p>
+    <p class="item-example">Limitando pela casa decimal</p>
+    <p>
+      <span class="item-pipe">number:'1.1-1' : </span>
+      <span class="item-value">{{ book.rating | number:'1.1-1' }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">number:'1.1-2' : </span>
+      <span class="item-value">{{ book.rating | number:'1.1-2' }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">number:'2.1-2' : </span>
+      <span class="item-value">{{ book.rating | number:'2.1-2' }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">number:'2.1-4' : </span>
+      <span class="item-value">{{ book.rating | number:'2.1-4' }}</span>
+    </p>
   </div>
 
   <div class="item">
     <h3>Pipe slice</h3>
-    <p>{{ str }} [0:5]: '{{ str | slice:0:5 }}'</p>
-    <p>{{ str }} [4:0]: '{{ str | slice:4:0 }}'</p>
-    <p>{{ str }} [-4]: '{{ str | slice:-4 }}'</p>
-    <p>{{ str }} [-4:-2]: '{{ str | slice:-4:-2 }}'</p>
-    <p>{{ str }} [-100]: '{{ str | slice:-100 }}'</p>
-    <p>{{ str }} [100]: '{{ str | slice:100 }}'</p>
+    <p class="item-example">String: {{ str }}</p>
+    <p>
+      <span class="item-pipe">slice:0:5 : </span>
+      <span class="item-value">{{ str | slice:0:5 }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">slice:4:0 : </span>
+      <span class="item-value">{{ str | slice:4:0 }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">slice:-4 : </span>
+      <span class="item-value">{{ str | slice:-4 }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">slice:-4:-2 : </span>
+      <span class="item-value">{{ str | slice:-4:-2 }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">slice:-100 : </span>
+      <span class="item-value">{{ str | slice:-100 }}</span>
+    </p>
+    <p>
+      <span class="item-pipe">slice:100 : </span>
+      <span class="item-value">{{ str | slice:100 }}</span>
+    </p>
   </div>
 
 </div>

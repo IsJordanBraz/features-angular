@@ -6,32 +6,61 @@ h1,
 h2,
 h3,
 p,
-span {
+span,
+li {
+  color: white;
+  font-family: "Rubik", sans-serif;
   line-height: normal;
   margin: 0;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.meuContainer {
+
+  background-color: #1c1d21;
+  padding: 3em 0 1em 0;
 
   .item {
-    margin: 1em;
-    width: calc(50% - 2em);
+    display: flex;
+    flex-direction: column;
+    background-color: #292a2e;
+    text-align: center;
+    margin: auto;
+    padding: 2em;
+    margin-bottom: 3em;
+    width: 60%;
+
+    .item-example {
+      color: #b0b2b3;
+      font-size: 0.875rem;
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 1em;
+    }
+
+    .item-pipe {
+      color: #22EE00;
+      font-size: .9rem;
+
+    }
+
+    .item-value {
+      color: #AA88FF;
+      font-size: .8rem;
+    }
 
     input {
-      max-width: 300px;
       margin: .5em 1em .5em 0;
     }
 
     > h3 {
-      margin-bottom: 0.5em;
+      margin: 0 0 .5em 0;
+    }
+
+    p span {
+      line-height: 1.3em;
     }
 
     ul {
       list-style-type: none;
     }
   }
-
 }

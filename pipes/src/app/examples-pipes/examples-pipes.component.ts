@@ -25,10 +25,10 @@ export class ExamplesPipesComponent implements OnInit {
   books: string[] = ['Angular', 'Java'];
 
   valueAsync = new Promise((resolve, reject) => {
-    setTimeout(() => resolve('valor assíncrono'), 2000);
+    setTimeout(() => resolve('Retorna essa string após 2000ms'), 2000);
   });
 
-  valueAsync2 = interval(2000).pipe(map(() => 'valor assíncrono Dois'));
+  valueAsync2 = interval(2000).pipe(map(() => 'Retorna essa frase após 2000ms'));
 
   gender = 'male';
   inviteMap: any = {male: 'Invite him.', female: 'Invite her.', other: 'Invite them.'};
