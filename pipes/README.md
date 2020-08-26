@@ -20,4 +20,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # PRINTS 
 
-![](./images/01.png)
+![](../images/01.png)
