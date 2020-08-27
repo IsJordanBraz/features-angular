@@ -1,0 +1,22 @@
+<div class="meuContainer">
+  <h3>create-cursos</h3>
+  <input type="text" #inputAddCourse>
+  <button (click)="onAddCourse(inputAddCourse.value)">Add</button>
+
+  <p>utilities</p>
+  <ul>
+    <li *ngFor="let item of cursos">
+      {{ item }}
+    </li>
+  </ul>
+
+  <p>private</p>
+  <ul>
+    <li *ngFor="let item of cursos2">
+      {{ item }}
+    </li>
+  </ul>
+
+  <app-get-cursos></app-get-cursos>
+
+</div>

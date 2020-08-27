@@ -1,0 +1,18 @@
+<h3>examples-services</h3>
+
+<input type="text" #inputAddCourse>
+<button (click)="onAddName(inputAddCourse.value)">Add</button>
+
+<p>utilities public</p>
+<ul>
+  <li *ngFor="let item of cursos">
+    {{ item }}
+  </li>
+</ul>
+
+<p>private</p>
+<ul>
+  <li *ngFor="let item of cursos2">
+    {{ item }}
+  </li>
+</ul>
