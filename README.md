@@ -1,6 +1,8 @@
 # features-angular
 Projetos em angular com componentes, diretivas, services, pipes e outros métodos do angular.
 
+# Curso https://www.youtube.com/watch?v=tPOMG0D57S0&list=PLGxZ4Rq3BOBoSRcKWEdQACbUCNWLczg2G
+
 # Instalação 📀
 
 Clone este repositório:
